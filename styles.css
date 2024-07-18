@@ -9,3 +9,12 @@
 	border-radius : 10px;
 
 }
+.modal-content {
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

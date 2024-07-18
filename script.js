@@ -13,7 +13,12 @@ function closeModalFunction(params) {
 }
 
 window.onclick = function(event) {
-  if (event.target.id !== "openModal" ) {
-	modal[0].style.display = "none";
-  }
+    if (event.target.id !== "openModal" && !modal[0].contains(event.target)) {
+        modal[0].style.display = "none";
+    }
 };
+
+// Prevent the click event on modal content from propagating to the document
+document.querySelector('.modal-content').addEventListener('click', function(event) {
+    event.stopPropagation();
+});
