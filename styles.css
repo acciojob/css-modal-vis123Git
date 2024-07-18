@@ -1,6 +1,11 @@
 .modal{
-	border: 1px solid blue;
+	/* border: 1px solid blue; */
 	width: 400px;
 	height: 300px;
 	visibility : hidden;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	padding : 20px;
+	margin-top : 20px;
+	border-radius : 10px;
+
 }
