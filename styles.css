@@ -1,20 +1,27 @@
-.modal{
-	/* border: 1px solid blue; */
-	width: 400px;
-	height: 300px;
-	visibility : hidden;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	padding : 20px;
-	margin-top : 20px;
-	border-radius : 10px;
-
+.modal {
+    border-radius: 10px;
+    width: 400px;
+    height: 200px;
+	padding : 10px;
+    visibility: hidden; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure the modal is on top */
 }
+
 .modal-content {
     position: relative;
 }
 
 .modal-header {
-    display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.modal-header>h2{
+	background-color:#4EAB4D;
+	color : white;
 }
