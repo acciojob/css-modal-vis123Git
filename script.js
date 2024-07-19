@@ -9,12 +9,17 @@ function openModalFunction(params) {
 
 function closeModalFunction(params) {
 	modal[0].style.display = "none";
+		modal[0].style.visibility = "hidden";
+
+	
 
 }
 
 window.onclick = function(event) {
     if (event.target.id !== "openModal" && !modal[0].contains(event.target)) {
         modal[0].style.display = "none";
+				modal[0].style.visibility = "hidden";
+
     }
 };
 
