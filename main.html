@@ -7,22 +7,19 @@
 </head>
 
 <body>
-	<button id="openModal" onclick="openModalFunction()">Open Model</button>
-	<div class="modal">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h2>Modal Header</h2>
-				<button class="close-modal" onclick="closeModalFunction()">Close Model</button>
-			</div>
-		<div class="modal-body">
-			<p>Modal Body Content</p>
-		</div>
-
-		</div>
-
-
-		
-	</div>
+	 <button id="openModal">Open Modal</button>
+    <div id="modalOverlay" class="modal-overlay"></div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Modal Header</h2>
+                <button id="closeModal">Close Modal</button>
+            </div>
+            <div class="modal-body">
+                <p>Modal Body Content</p>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="./script.js">
 </script>
 

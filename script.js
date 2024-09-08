@@ -1,29 +1,32 @@
-const button = document.getElementById("openModal")
-const modal = document.getElementsByClassName("modal")
+document.addEventListener('DOMContentLoaded', function() {
+    const openModalBtn = document.getElementById("openModal");
+    const closeModalBtn = document.getElementById("closeModal");
+    const modal = document.getElementById("modal");
+    const modalOverlay = document.getElementById("modalOverlay");
 
-function openModalFunction(params) {
-	modal[0].style.visibility = "visible";
-	modal[0].style.display = "block";
-
-}
-
-function closeModalFunction(params) {
-	modal[0].style.display = "none";
-		modal[0].style.visibility = "hidden";
-
-	
-
-}
-
-window.onclick = function(event) {
-    if (event.target.id !== "openModal" && !modal[0].contains(event.target)) {
-        modal[0].style.display = "none";
-				modal[0].style.visibility = "hidden";
-
+    function openModal() {
+        modal.style.display = "block";
+        modalOverlay.style.display = "block";
     }
-};
 
-// Prevent the click event on modal content from propagating to the document
-document.querySelector('.modal-content').addEventListener('click', function(event) {
-    event.stopPropagation();
+    function closeModal() {
+        modal.style.display = "none";
+        modalOverlay.style.display = "none";
+    }
+
+    openModalBtn.addEventListener("click", openModal);
+
+    closeModalBtn.addEventListener("click", closeModal);
+
+    modalOverlay.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", function(event) {
+        event.stopPropagation();
+    });
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape" && modal.style.display === "block") {
+            closeModal();
+        }
+    });
 });
